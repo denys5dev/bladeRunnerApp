@@ -1,6 +1,10 @@
 import { LayoutComponent } from '../layout/layout.component';
+import { Routes } from '@angular/router';
 
-export const routes = [
+// IF you want lazy-loading:
+// Assign to Type Rotes is important !!!
+// And install angular2-router-loader plugin for webpack !!!
+export const routes: Routes = [
 
     {
         path: '',
