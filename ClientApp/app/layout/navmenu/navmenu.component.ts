@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./navmenu.component.css']
 })
 export class NavMenuComponent {
+
+    constructor(private _router: Router) {
+        
+    }
+    login() {
+        this._router.navigate(['/login']);
+    }
 }
