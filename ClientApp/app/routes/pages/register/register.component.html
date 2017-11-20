@@ -11,30 +11,49 @@
                             Sign up to get started with Authority
                         </p>
                         <div class="mt-4">
-                            <form>
+                            <form [formGroup]="registerForm" #form="ngForm" (ngSubmit)="onSubmitRegisterForm(form)">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" value="" placeholder="Enter email address">
+                                    <input type="text" class="form-control" id="firstName" value="" placeholder="Enter first name" formControlName="firstName">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password" value="" placeholder="Enter password">
+                                    <input type="text" class="form-control" id="lastName" value="" placeholder="Enter last name" formControlName="lastName">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="confirm-password" value="" placeholder="Confirm password">
+                                    <input type="email" class="form-control" name="email" value="" placeholder="Enter email address" formControlName="email">
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password" value="" placeholder="Enter password" formControlName="password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="confirm-password" value="" placeholder="Confirm password" formControlName="confimPassword">
+                                </div>
+                                <button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-block">Create Account</button>
                             </form>
                             <div class="clearfix"></div>
-                            <p class="content-divider center mt-4"><span>or</span></p>
+                            <p class="content-divider center mt-4">
+                                <span>or</span>
+                            </p>
                         </div>
                         <p class="mt-4 social-login text-center">
-                            <a href="#" class="btn btn-twitter"><em class="ion-social-twitter"></em></a>
-                            <a href="#" class="btn btn-facebook"><em class="ion-social-facebook"></em></a>
-                            <a href="#" class="btn btn-linkedin"><em class="ion-social-linkedin"></em></a>
-                            <a href="#" class="btn btn-google"><em class="ion-social-googleplus"></em></a>
-                            <a href="#" class="btn btn-github"><em class="ion-social-github"></em></a>
+                            <a href="#" class="btn btn-twitter">
+                                <em class="ion-social-twitter"></em>
+                            </a>
+                            <a href="#" class="btn btn-facebook">
+                                <em class="ion-social-facebook"></em>
+                            </a>
+                            <a href="#" class="btn btn-linkedin">
+                                <em class="ion-social-linkedin"></em>
+                            </a>
+                            <a href="#" class="btn btn-google">
+                                <em class="ion-social-googleplus"></em>
+                            </a>
+                            <a href="#" class="btn btn-github">
+                                <em class="ion-social-github"></em>
+                            </a>
                         </p>
                         <p class="text-center">
-                            Already have an account? <a [routerLink]="['/login']">Login Now</a>
+                            Already have an account?
+                            <a [routerLink]="['/login']">Login Now</a>
                         </p>
                     </div>
                 </div>
@@ -42,8 +61,9 @@
             <div class="clearfix"></div>
             <div class="col-sm-12 mt-5 footer">
                 <p class="text-white small text-center">
-                    &copy; 2017 Login/Register Forms. A FREE Bootstrap 4 component by 
-                    <a href="https://wireddots.com">Wired Dots</a>. Designed by <a href="https://twitter.com/attacomsian">@attacomsian</a>
+                    &copy; 2017 Login/Register Forms. A FREE Bootstrap 4 component by
+                    <a href="https://wireddots.com">Wired Dots</a>. Designed by
+                    <a href="https://twitter.com/attacomsian">@attacomsian</a>
                 </p>
             </div>
         </div>
