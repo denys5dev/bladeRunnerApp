@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '../../shared/shared.module';
 import { LoginComponent } from './login/login.component';
-// import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './register/register.component';
 // import { RecoverComponent } from './recover/recover.component';
 // import { LockComponent } from './lock/lock.component';
 // import { MaintenanceComponent } from './maintenance/maintenance.component';
@@ -28,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     ],
     declarations: [
         LoginComponent,
-        // RegisterComponent,
+        RegisterComponent,
         // RecoverComponent,
         // LockComponent,
         // MaintenanceComponent,
@@ -38,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     exports: [
         RouterModule,
         LoginComponent,
-        // RegisterComponent,
+        RegisterComponent,
         // RecoverComponent,
         // LockComponent,
         // MaintenanceComponent,

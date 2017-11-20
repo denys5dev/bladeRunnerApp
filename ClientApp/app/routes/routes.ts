@@ -1,3 +1,4 @@
+import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from '../layout/layout.component';
 import { Routes } from '@angular/router';
@@ -6,16 +7,15 @@ import { Routes } from '@angular/router';
 // Assign to Type Rotes is important !!!
 // And install angular2-router-loader plugin for webpack !!!
 export const routes: Routes = [
-    {
-        path: 'login', component: LoginComponent
-    },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     {
         path: '',
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', loadChildren: './home/home.module#HomeModule' },
-            // { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
             // { path: 'elements', loadChildren: './elements/elements.module#ElementsModule' },
             // { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },

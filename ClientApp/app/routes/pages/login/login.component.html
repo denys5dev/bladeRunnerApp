@@ -1,44 +1,54 @@
-<div class="container d-flex h-100">
-    <div id="bg__img"></div>
-    <div class="row justify-content-center align-self-center flex-1">
-        <div class="col-md-12">
-            <!-- <h2 class="text-center text-white mb-4">Bootstrap 4 Login Form</h2> -->
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <span class="anchor" id="formLogin"></span>
-                    <!-- form card login -->
-                    <div class="card rounded-0">
-                        <div class="card-header">
-                            <h3 class="mb-0">Login</h3>
+        <!--hero section-->
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-xs-12">
+                        <div class="card border-none">
+                            <div class="card-block">
+                                <div class="mt-2">
+                                    <!-- <img src="img/male.jpg" alt="Male" class="brand-logo mx-auto d-block img-fluid rounded-circle"/> -->
+                                </div>
+                                <p class="mt-4 text-white lead text-center">
+                                    Sign in to access your Authority account
+                                </p>
+                                <div class="mt-4">
+                                    <form>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email" value="" placeholder="Enter email address">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="password" value="" placeholder="Enter password">
+                                        </div>
+                                        <label class="custom-control custom-checkbox mt-2">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description text-white">Keep me logged in</span>
+                                        </label>
+                                        <button type="submit" class="btn btn-primary float-right">Sign in</button>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                    <p class="content-divider center mt-4"><span>or</span></p>
+                                </div>
+                                <p class="mt-4 social-login text-center">
+                                    <a href="#" class="btn btn-twitter"><em class="ion-social-twitter"></em></a>
+                                    <a href="#" class="btn btn-facebook"><em class="ion-social-facebook"></em></a>
+                                    <a href="#" class="btn btn-linkedin"><em class="ion-social-linkedin"></em></a>
+                                    <a href="#" class="btn btn-google"><em class="ion-social-googleplus"></em></a>
+                                    <a href="#" class="btn btn-github"><em class="ion-social-github"></em></a>
+                                </p>
+                                <p class="text-center">
+                                    Don't have an account yet? <a [routerLink]="['/register']">Sign Up Now</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body align-middle">
-                            <form class="form" role="form" autocomplete="off" id="formLogin">
-                                <div class="form-group">
-                                    <label for="uname1">Username</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
-                                </div>
-                                <div>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description small">Remember me on this computer</span>
-                                    </label>
-                                </div>
-                                <button type="button" class="btn btn-success btn-lg float-right">Login</button>
-                            </form>
-                        </div>
-                        <!--/card-block-->
                     </div>
-                    <!-- /form card login -->
+                    <div class="clearfix"></div>
+                    <div class="col-sm-12 mt-5 footer">
+                        <p class="text-white small text-center">
+                            &copy; 2017 Login/Register Forms. A FREE Bootstrap 4 component by 
+                            <a href="https://wireddots.com">Wired Dots</a>. Designed by <a href="https://twitter.com/attacomsian">@attacomsian</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!--/row-->
-        </div>
-        <!--/col-->
-    </div>
-    <!--/row-->
-</div>
+        </section>

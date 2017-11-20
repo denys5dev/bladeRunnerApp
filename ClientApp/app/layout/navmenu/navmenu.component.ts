@@ -14,4 +14,7 @@ export class NavMenuComponent {
     login() {
         this._router.navigate(['/login']);
     }
+    register() {
+        this._router.navigate(['/register']);   
+    }
 }
