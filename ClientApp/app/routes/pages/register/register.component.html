@@ -12,14 +12,19 @@
                         </p>
                         <div class="mt-4">
                             <form [formGroup]="registerForm" #form="ngForm" (ngSubmit)="onSubmitRegisterForm(form)">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="firstName" value="" placeholder="Enter first name" formControlName="firstName">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="lastName" value="" placeholder="Enter last name" formControlName="lastName">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" name="email" value="" placeholder="Enter email address" formControlName="email">
+                                <div [formGroup]="registerForm.controls.contact">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="firstName" value=""  placeholder="Enter first name" formControlName="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="lastName" value="" placeholder="Enter last name" formControlName="lastName">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" value="" placeholder="Enter email address" formControlName="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phone" value="" placeholder="Enter phone number" formControlName="phone">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="password" value="" placeholder="Enter password" formControlName="password">

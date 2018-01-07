@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 // import { TranslateModule } from '@ngx-translate/core';
 // import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 
@@ -37,6 +38,7 @@ import { RouterModule } from '@angular/router';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpModule,
         // TranslateModule,
         // AccordionModule.forRoot(),
         // AlertModule.forRoot(),
@@ -73,6 +75,7 @@ import { RouterModule } from '@angular/router';
         FormsModule,
         ReactiveFormsModule,
         RouterModule,
+        HttpModule,
         // TranslateModule,
         // AccordionModule,
         // AlertModule,

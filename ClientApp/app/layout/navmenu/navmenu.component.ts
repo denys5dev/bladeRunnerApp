@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { AuthService } from '../../routes/pages/auth.service';
 
 @Component({
     selector: 'nav-menu',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
 
-    constructor(private _router: Router) {
+    constructor(private _router: Router, private _authService: AuthService) {
         
     }
     login() {

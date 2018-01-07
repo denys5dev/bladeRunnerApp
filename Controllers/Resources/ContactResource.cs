@@ -10,8 +10,10 @@ namespace BladeRunnerApp.Controllers.Resources
         [Required]
         [StringLength(255)]
         public string LastName { get; set; }
+
         [Required]
-        [StringLength(255)]
+        [StringLength(50)]
+        [EmailAddress]
         public string Email { get; set; }
         public string Phone { get; set; }
     }

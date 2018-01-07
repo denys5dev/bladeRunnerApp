@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'registration-app',
@@ -8,22 +10,46 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 
 export class RegisterComponent implements OnInit {
-    
+
     registerForm: FormGroup;
 
-    constructor(private _fb: FormBuilder) { 
+    constructor(private _fb: FormBuilder, private _authService: AuthService, private _router: Router) {
+      
+    }
+
+    ngOnInit() { 
         this.registerForm = this._fb.group({
-            firstName: ['', [Validators.minLength(1), Validators.required]],
-            lastName: ['', [Validators.minLength(1), Validators.required]],
-            email: ['', [Validators.email, Validators.required]],
+            contact: this._fb.group({
+                name: ['', [Validators.minLength(2), Validators.required]],
+                lastName: ['', [Validators.minLength(2), Validators.required]],
+                email: ['', [Validators.email, Validators.required]],
+                phone: ['', [Validators.minLength(4), Validators.required]],
+            }),
             password: ['', [Validators.minLength(6), Validators.required]],
-            confimPassword: ['', [Validators.required]]
+            confimPassword: ['', [Validators.required, this.passwordConfirming]]
         });
     }
 
-    ngOnInit() { }
-
     onSubmitRegisterForm(form: any) {
-        console.log(form)
+        this._authService.registerUser(form.value).subscribe(user => {
+            if(user) {
+                localStorage.setItem('user', user);
+                this._router.navigate(['/home']);
+            }
+        }, (error) => {
+            alert(error);
+        });
+    }
+
+    passwordConfirming(c: AbstractControl): any {
+        if (!c.parent || !c) return;
+        const pwd = c.parent.get('password');
+        const cpwd = c.parent.get( 'confimPassword')
+
+        if (!pwd || !cpwd) return;
+        if (pwd.value !== cpwd.value) {
+            return { invalid: true };
+
+        }
     }
 }
