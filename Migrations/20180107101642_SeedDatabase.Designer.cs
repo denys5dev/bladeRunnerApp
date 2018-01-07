@@ -11,7 +11,7 @@ using System;
 namespace BladeRunnerApp.Migrations
 {
     [DbContext(typeof(BladeRunnerDbContext))]
-    [Migration("20171105141255_SeedDatabase")]
+    [Migration("20180107101642_SeedDatabase")]
     partial class SeedDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
