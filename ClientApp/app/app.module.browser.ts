@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppModuleShared } from './app.module.shared';
 import { AppComponent } from './app.component';
+import { GlobalErrorHandler } from './core/globalErrorHandler.service';
+import { ErrorHandler } from '@angular/core';
+
 
 @NgModule({
     bootstrap: [ AppComponent ],

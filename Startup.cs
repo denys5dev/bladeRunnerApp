@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
 using Swashbuckle.AspNetCore.Swagger;
+using Newtonsoft.Json.Serialization;
 
 namespace BladeRunnerApp
 {
@@ -33,6 +34,12 @@ namespace BladeRunnerApp
              options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             services.AddMvc();
+            services.AddMvc()
+                  .AddJsonOptions(options =>
+                  {
+                      options.SerializerSettings.ContractResolver =
+                          new CamelCasePropertyNamesContractResolver();
+                  });
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>

@@ -1,0 +1,23 @@
+@import '../../../shared/styles/_mixin';
+
+.register-container {
+    background-color: rgb(255, 255, 255);
+    color: #666666;
+    width: 352px;
+    padding: 28px;
+    margin: 0 auto;
+    border-radius: 4px;
+    @include centerer;
+}
+.btn-link {
+    font-size: 28px;
+}
+.error-list {
+    font-size: 12px;
+    margin: 0;
+    padding: 0px;
+    padding-left: 12px;
+}
+.error-border {
+    box-shadow: 0 0 10px rgba(248, 52, 52, 0.59);
+}

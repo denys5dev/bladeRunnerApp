@@ -1,0 +1,73 @@
+<div class="home-btn">
+    <a [routerLink]="['/home']" class="btn btn-link">
+        <i class="fa fa-home" aria-hidden="true"></i>
+    </a>
+</div>
+<div class="register-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterForm(registerForm)">
+        <div [formGroup]="registerForm.controls.contact">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" class="form-control" [ngClass]="{'error-border': errorMessages && (!name.dirty || !name.valid) }"
+                    id="name" aria-describedby="emailHelp" placeholder="Enter name">
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessages && (!name.dirty || !name.valid)">
+                    <ul class="error-list">
+                        <li *ngFor="let error of errorMessages['contact.Name']">{{error}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{'error-border': errorMessages && (!lastName.dirty || !lastName.valid) }"
+                    id="lastName" aria-describedby="emailHelp" placeholder="Enter last name">
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessages && (!lastName.dirty || !lastName.valid)">
+                    <ul class="error-list">
+                        <li *ngFor="let error of errorMessages['contact.LastName']">{{error}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" formControlName="email" [ngClass]="{'error-border': errorMessages && (!email.dirty || !email.valid) }"
+                    class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessages && (!email.dirty || !email.valid)">
+                    <ul class="error-list">
+                        <li *ngFor="let error of errorMessages['contact.Email']">{{error}}</li>
+                    </ul>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessages?.email">
+                    <ul class="error-list">
+                        <li>{{errorMessages?.email[0]}}</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input type="text" formControlName="phone" class="form-control" id="phone" aria-describedby="emailHelp" placeholder="Enter phone number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" [ngClass]="{'error-border': errorMessages && (!password.dirty || !password.valid)}"
+                class="form-control" id="password" placeholder="Enter Password">
+            <div class="alert alert-danger" role="alert" *ngIf="errorMessages && (!password.dirty || !password.valid)">
+                <ul class="error-list">
+                    <li *ngFor="let error of errorMessages.password">{{error}}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input type="password" formControlName="confimPassword" [ngClass]="{'error-border': confimPassword.invalid && (confimPassword.dirty || confimPassword.touched)}"
+                class="form-control" id="confirm" placeholder="Repeat Password">
+            <div class="alert alert-danger" role="alert" *ngIf="confimPassword.invalid && (confimPassword.dirty || confimPassword.touched)">
+                <ul class="error-list">
+                    <li>Passwords not match</li>
+                </ul>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

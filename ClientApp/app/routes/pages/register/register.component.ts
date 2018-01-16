@@ -12,6 +12,7 @@ import { AuthService } from '../../../core/auth.service';
 export class RegisterComponent implements OnInit {
 
     registerForm: FormGroup;
+    errorMessages: any;
 
     constructor(private _fb: FormBuilder, private _authService: AuthService, private _router: Router) {
       
@@ -30,11 +31,32 @@ export class RegisterComponent implements OnInit {
         });
     }
 
+    get name() {
+       return  this.registerForm.controls.contact.get('name');
+    }
+
+    get lastName() {
+        return  this.registerForm.controls.contact.get('lastName');
+     }
+
+     get email() {
+        return  this.registerForm.controls.contact.get('email');
+     }
+
+     get password() {
+        return  this.registerForm.get('password');
+     }
+
+     get confimPassword() {
+        return  this.registerForm.get('confimPassword');
+     }
+
     onSubmitRegisterForm(form: any) {
+        console.log(form)
         this._authService.registerUser(form.value).subscribe(user => {
             this._router.navigate(['/home']);
         }, (error) => {
-            alert(error);
+            this.errorMessages = error.json();
         });
     }
 

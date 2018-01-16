@@ -17,6 +17,8 @@ body{
 .brand-logo{
     width: 120px;
 }
+@import './shared/styles/_mixin';
+
 .hero{
     background-image: url('./img/bleadeRunner.jpg');
     background-size: cover;
