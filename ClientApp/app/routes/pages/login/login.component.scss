@@ -1,3 +1,10 @@
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 //login styles
 #bg__img {
     position: absolute;
@@ -8,4 +15,17 @@
     background: url('/img/badeRunner.jpg');
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.login-container {
+    background-color: rgb(255, 255, 255);
+    color: #666666;
+    width: 352px;
+    padding: 28px;
+    margin: 0 auto;
+    border-radius: 4px;
+    @include centerer
+}
+.btn-link {
+    font-size: 28px;
 }

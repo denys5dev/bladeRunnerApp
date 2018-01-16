@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/auth.service';
 
 @Component({
     selector: 'registration-app',
@@ -32,10 +32,7 @@ export class RegisterComponent implements OnInit {
 
     onSubmitRegisterForm(form: any) {
         this._authService.registerUser(form.value).subscribe(user => {
-            if(user) {
-                localStorage.setItem('user', user);
-                this._router.navigate(['/home']);
-            }
+            this._router.navigate(['/home']);
         }, (error) => {
             alert(error);
         });
@@ -44,7 +41,7 @@ export class RegisterComponent implements OnInit {
     passwordConfirming(c: AbstractControl): any {
         if (!c.parent || !c) return;
         const pwd = c.parent.get('password');
-        const cpwd = c.parent.get( 'confimPassword')
+        const cpwd = c.parent.get('confimPassword');
 
         if (!pwd || !cpwd) return;
         if (pwd.value !== cpwd.value) {

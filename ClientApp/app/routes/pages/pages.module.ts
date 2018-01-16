@@ -4,7 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from './auth.service';
+import { AuthService } from '../../core/auth.service';
+
 // import { RecoverComponent } from './recover/recover.component';
 // import { LockComponent } from './lock/lock.component';
 // import { MaintenanceComponent } from './maintenance/maintenance.component';
